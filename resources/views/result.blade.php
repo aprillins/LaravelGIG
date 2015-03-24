@@ -19,18 +19,20 @@
 </style>
 <body>
 <div class="container">
-	{!! Form::open(['url' => '/', 'method' => 'POST']) !!}
-	<table>
-		<tr>
-			<td>Keyword</td>
-			<td>{!! Form::text('keyword') !!}</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td>{!! Form::submit('Search') !!}</td>
-		</tr>
-	</table>
-	{!! Form::close() !!}
+
+	{!! link_to('/', 'Home') !!} <br>
+
+	<?php
+		//print_r($googleResponseResults);
+	?>
+	<ul>
+		 
+	@foreach($googleResponseResults as $key => $result)
+		<li>{!! link_to($result->unescapedUrl, $result->titleNoFormatting) !!}</li>
+	@endforeach
+		
+		
+	</ul>
 </div>
 </body>
 </html>

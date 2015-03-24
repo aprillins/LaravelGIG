@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+
+Route::get('/', 'GrabberController@index');
+Route::post('/', 'GrabberController@grab');
 
 Route::get('home', 'HomeController@index');
 
