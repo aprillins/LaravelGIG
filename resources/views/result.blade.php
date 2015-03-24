@@ -28,7 +28,7 @@
 	<ul>
 		 
 	@foreach($googleResponseResults as $key => $result)
-		<li>{!! link_to($result->unescapedUrl, $result->titleNoFormatting) !!}</li>
+		<li>{!! link_to($result->unescapedUrl, $result->titleNoFormatting) !!} - {!! link_to_action('GrabberController@saveImage', 'Save image', ['url' => urlencode($result->unescapedUrl)]) !!}</li>
 	@endforeach
 		
 		

@@ -12,9 +12,13 @@
 */
 
 
+// LaravelGIG Routes
+
 Route::get('/', 'GrabberController@index');
 Route::post('/', 'GrabberController@grab');
+Route::get('/save/{url}', 'GrabberController@saveImage')->where('url', '(.*)');
 
+// Default Laravel Routes
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
